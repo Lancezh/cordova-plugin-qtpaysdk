@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-qtpaysdk" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-qtpaysdk</name>
+    <description>QTPaySDK Cordova Plugin</description>
+    <author>Lancezh</author>
+    <license>Apache 2.0 License</license>
+    <keywords>qtpaysdk,qfpay,QTPaySDK,qpossdk</keywords>
+    <repo>https://github.com/Lancezh/cordova-plugin-qtpaysdk.git</repo>
+    <issue>https://github.com/Lancezh/cordova-plugin-qtpaysdk/issues</issue>
+
+    <js-module name="qtpaysdk" src="www/qtpaysdk.js">
+        <clobbers target="qtpaysdk"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="qtpaysdk">
+                <param name="android-package" value="com.qfpay.qpossdk.QTPaySDK"/>
+                <!--<param name="onload" value="true"/>-->
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity
+                    android:name="com.alipay.sdk.app.H5PayActivity"
+                    android:configChanges="orientation|keyboardHidden|navigation"
+                    android:exported="false"
+                    android:screenOrientation="behind"
+                    android:windowSoftInputMode="adjustResize|stateHidden">
+            </activity>
+
+            <activity
+                    android:name="com.qfpay.sdk.activity.CashierActivity"
+                    android:theme="@android:style/Theme.NoTitleBar">
+            </activity>
+            <activity
+                    android:name="com.qfpay.sdk.activity.UserAccountActivity"
+                    android:theme="@android:style/Theme.NoTitleBar">
+            </activity>
+
+        </config-file>
+        <!--<config-file target="AndroidManifest.xml" parent="/manifest">-->
+            <!--<uses-permission android:name="android.permission.INTERNET" />-->
+            <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+            <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+        <!--</config-file>-->
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+        <!--<config-file parent="/*" target="AndroidManifest.xml"></config-file>-->
+
+        <!-- QTPaySDK resources -->
+        <resource-file src="resources/anim" target="res/anim" />
+        <resource-file src="resources/drawable" target="res/drawable" />
+        <resource-file src="resources/drawable-xhdpi" target="res/drawable-xhdpi" />
+        <resource-file src="resources/layout" target="res/layout" />
+        <resource-file src="resources/values" target="res/values" />
+        <source-file src="resources/libs" target-dir="libs" />
+
+        <!-- Plugin src-->
+        <source-file src="src/android/QTPaySDK.java"
+                     target-dir="src/com/qfpay/qpossdk/qtpaysdk"/>
+    </platform>
+</plugin>
