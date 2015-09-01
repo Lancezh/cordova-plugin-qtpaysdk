@@ -136,14 +136,14 @@
         <framework src="extras/android/support/v7/appcompat/android-support-v7-appcompat.jar"/>
 
         <!-- QTPaySDK resources -->
-        <resource-file src="resources/anim" target="res/anim"/>
-        <resource-file src="resources/drawable" target="res/drawable"/>
-        <resource-file src="resources/drawable-hdpi" target="res/drawable-hdpi"/>
-        <resource-file src="resources/drawable-xhdpi" target="res/drawable-xhdpi"/>
-        <resource-file src="resources/layout" target="res/layout"/>
-        <resource-file src="resources/values" target="res/values"/>
-        <resource-file src="resources/values-v21" target="res/values-v21"/>
-        <resource-file src="resources/xml" target="res/xml"/>
+        <resource-file src="resources/anim/qfpay*" target="res/anim/qfpay*"/>
+        <resource-file src="resources/drawable/qfpay*" target="res/drawable/qfpay*"/>
+        <resource-file src="resources/drawable-hdpi/qfpay*" target="res/drawable-hdpi/qfpay*"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay*" target="res/drawable-xhdpi/qfpay*"/>
+        <resource-file src="resources/layout/qfpay*" target="res/layout/qfpay*"/>
+        <resource-file src="resources/values/qfpay*" target="res/values/qfpay*"/>
+        <resource-file src="resources/values-v21/qfpay*" target="res/values-v21/qfpay*"/>
+        <resource-file src="resources/xml/qfpay*" target="res/xml/qfpay*"/>
         <source-file src="src/android/libs/arm64" target-dir="libs"/>
         <source-file src="src/android/libs/arm64-v8a" target-dir="libs"/>
         <source-file src="src/android/libs/armeabi" target-dir="libs"/>
