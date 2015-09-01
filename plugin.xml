@@ -12,6 +12,7 @@
     <js-module name="qtpaysdk" src="www/qtpaysdk.js">
         <clobbers target="qtpaysdk"/>
     </js-module>
+
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="qtpaysdk">
@@ -135,14 +136,14 @@
         <framework src="com.android.support:appcompat-v7:22.2.0"/>
 
         <!-- QTPaySDK resources -->
-        <resource-file src="resources/anim" target="res"/>
-        <resource-file src="resources/drawable" target="res"/>
-        <resource-file src="resources/drawable-hdpi" target="res"/>
-        <resource-file src="resources/drawable-xhdpi" target="res"/>
-        <resource-file src="resources/layout" target="res"/>
-        <resource-file src="resources/values" target="res"/>
-        <resource-file src="resources/values-v21" target="res"/>
-        <resource-file src="resources/xml" target="res"/>
+        <resource-file src="resources/anim" target="res/anim"/>
+        <resource-file src="resources/drawable" target="res/drawable"/>
+        <resource-file src="resources/drawable-hdpi" target="res/drawable-hdpi"/>
+        <resource-file src="resources/drawable-xhdpi" target="res/drawable-xhdpi"/>
+        <resource-file src="resources/layout" target="res/layout"/>
+        <resource-file src="resources/values" target="res/values"/>
+        <resource-file src="resources/values-v21" target="res/values-v21"/>
+        <resource-file src="resources/xml" target="res/xml"/>
         <source-file src="src/android/libs/arm64" target-dir="libs"/>
         <source-file src="src/android/libs/arm64-v8a" target-dir="libs"/>
         <source-file src="src/android/libs/armeabi" target-dir="libs"/>
