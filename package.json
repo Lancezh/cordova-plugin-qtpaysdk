@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-qtpaysdk",
+  "version": "0.1.0",
+  "description": "QTPaySDK Cordova Plugin",
+  "cordova": {
+    "id": "cordova-plugin-qtpaysdk",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lancezh/cordova-plugin-qtpaysdk.git"
+  },
+  "keywords": [
+    "qtpaysdk",
+    "qfpay",
+    "QTPaySDK",
+    "possdk",
+    "qpos",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Lancezh",
+  "license": "Apache 2.0 License",
+  "bugs": {
+    "url": "https://github.com/Lancezh/cordova-plugin-qtpaysdk/issues"
+  },
+  "homepage": "https://github.com/Lancezh/cordova-plugin-qtpaysdk#readme"
+}
