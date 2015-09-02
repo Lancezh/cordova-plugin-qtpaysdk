@@ -1,4 +1,4 @@
-package com.qfpay.QTPaySDK;
+package com.qfpay.qtpaysdk;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -13,6 +13,8 @@ import com.qfpay.qpossdk.entity.PayOrderInfo;
 import com.qfpay.qpossdk.pay.QfPayCallBack;
 import com.qfpay.qpossdk.pay.QfPaySdk;
 
+import android.app.Activity;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -21,11 +23,11 @@ public class QTPaySDK extends CordovaPlugin {
     private CallbackContext callbackContext;
     private Activity activity = null;
 
-    @Override
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-        // your init code here
-    }
+//    @Override
+//    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+//        super.initialize(cordova, webView);
+//        // your init code here
+//    }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -45,30 +47,30 @@ public class QTPaySDK extends CordovaPlugin {
     QfPayCallBack payCallBack = new QfPayCallBack() {
         @Override
         public void onPayResultFail() {
-            this.callbackContext.error("fail");
+            callbackContext.error("fail");
 //            queryOrder();
         }
 
         @Override
         public void onPayResultSuccess() {
-            this.callbackContext.success("success");
+            callbackContext.success("success");
 //            queryOrder();
         }
 
         @Override
         public void onPayResultCancel() {
-            this.callbackContext.error("cancel");
+            callbackContext.error("cancel");
 //            queryOrder();
         }
 
         @Override
         public void onPayResultUnknow() {
-            this.callbackContext.error("unknow");
+            callbackContext.error("unknow");
 //            queryOrder();
         }
     };
 
-    private void orderPayByPos(JSONArray args) {
+    private void orderPayByPos(JSONArray args) throws JSONException {
         JSONObject jObject = args.getJSONObject(0);
 
         PayOrderInfo orderInfo = new PayOrderInfo();

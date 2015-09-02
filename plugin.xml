@@ -14,9 +14,11 @@
     </js-module>
 
     <platform name="android">
+        <framework src="com.android.support:appcompat-v7:22.+" />
+
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="qtpaysdk">
-                <param name="android-package" value="com.qfpay.QTPaySDK"/>
+                <param name="android-package" value="com.qfpay.qtpaysdk.QTPaySDK"/>
                 <!--<param name="onload" value="true"/>-->
             </feature>
         </config-file>
@@ -133,23 +135,131 @@
             <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
         </config-file>
 
-        <framework src="extras/android/support/v7/appcompat/android-support-v7-appcompat.jar"/>
-
         <!-- QTPaySDK resources -->
-        <resource-file src="resources/anim/qfpay*" target="res/anim/qfpay*"/>
-        <resource-file src="resources/drawable/qfpay*" target="res/drawable/qfpay*"/>
-        <resource-file src="resources/drawable-hdpi/qfpay*" target="res/drawable-hdpi/qfpay*"/>
-        <resource-file src="resources/drawable-xhdpi/qfpay*" target="res/drawable-xhdpi/qfpay*"/>
-        <resource-file src="resources/layout/qfpay*" target="res/layout/qfpay*"/>
-        <resource-file src="resources/values/qfpay*" target="res/values/qfpay*"/>
-        <resource-file src="resources/values-v21/qfpay*" target="res/values-v21/qfpay*"/>
-        <resource-file src="resources/xml/qfpay*" target="res/xml/qfpay*"/>
-        <source-file src="src/android/libs/arm64" target-dir="libs"/>
-        <source-file src="src/android/libs/arm64-v8a" target-dir="libs"/>
-        <source-file src="src/android/libs/armeabi" target-dir="libs"/>
-        <source-file src="src/android/libs/armeabi-v7a" target-dir="libs"/>
-        <source-file src="src/android/libs/mips" target-dir="libs"/>
-        <source-file src="src/android/libs/mips64" target-dir="libs"/>
+        <resource-file src="resources/anim/qfpay_alpha_input.xml" target="res/anim/qfpay_alpha_input.xml"/>
+        <resource-file src="resources/anim/qfpay_alpha_input_end.xml" target="res/anim/qfpay_alpha_input_end.xml"/>
+        <resource-file src="resources/anim/qfpay_custom_dialog_enter.xml" target="res/anim/qfpay_custom_dialog_enter.xml"/>
+        <resource-file src="resources/anim/qfpay_custom_dialog_exit.xml" target="res/anim/qfpay_custom_dialog_exit.xml"/>
+        <resource-file src="resources/anim/qfpay_cycle_2.xml" target="res/anim/qfpay_cycle_2.xml"/>
+        <resource-file src="resources/anim/qfpay_shake.xml" target="res/anim/qfpay_shake.xml"/>
+
+        <resource-file src="resources/drawable/qfpay_amount_screen_backgroud.xml" target="res/drawable/qfpay_amount_screen_backgroud.xml"/>
+        <resource-file src="resources/drawable/qfpay_back_selector.xml" target="res/drawable/qfpay_back_selector.xml"/>
+        <resource-file src="resources/drawable/qfpay_button_enabled.xml" target="res/drawable/qfpay_button_enabled.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_keyboard_key.xml" target="res/drawable/qfpay_custom_keyboard_key.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_keyboard_opkey.xml" target="res/drawable/qfpay_custom_keyboard_opkey.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_left_selector.xml" target="res/drawable/qfpay_custom_left_selector.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_password_view.xml" target="res/drawable/qfpay_custom_password_view.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_right_selector.xml" target="res/drawable/qfpay_custom_right_selector.xml"/>
+        <resource-file src="resources/drawable/qfpay_custom_right_text_selector.xml" target="res/drawable/qfpay_custom_right_text_selector.xml"/>
+        <resource-file src="resources/drawable/qfpay_input_amount.xml" target="res/drawable/qfpay_input_amount.xml"/>
+        <resource-file src="resources/drawable/qfpay_input_reg.xml" target="res/drawable/qfpay_input_reg.xml"/>
+        <resource-file src="resources/drawable/qfpay_next_normal.xml" target="res/drawable/qfpay_next_normal.xml"/>
+        <resource-file src="resources/drawable/qfpay_paint_bg.png" target="res/drawable/qfpay_paint_bg.png"/>
+        <resource-file src="resources/drawable/qfpay_paint_clear_selsetor.xml" target="res/drawable/qfpay_paint_clear_selsetor.xml"/>
+        <resource-file src="resources/drawable/qfpay_progress_horizontal.xml" target="res/drawable/qfpay_progress_horizontal.xml"/>
+        <resource-file src="resources/drawable/qfpay_result_add_member.xml" target="res/drawable/qfpay_result_add_member.xml"/>
+        <resource-file src="resources/drawable/qfpay_selector_btn_help.xml" target="res/drawable/qfpay_selector_btn_help.xml"/>
+        <resource-file src="resources/drawable/qfpay_selector_btn_reg.xml" target="res/drawable/qfpay_selector_btn_reg.xml"/>
+        <resource-file src="resources/drawable/qfpay_takepicture_press.xml" target="res/drawable/qfpay_takepicture_press.xml"/>
+        <resource-file src="resources/drawable/qfpay_toast_bg.xml" target="res/drawable/qfpay_toast_bg.xml"/>
+        <resource-file src="resources/drawable/qfpay_trade_cloud_selsetor.xml" target="res/drawable/qfpay_trade_cloud_selsetor.xml"/>
+
+        <resource-file src="resources/drawable-hdpi/qfpay_bottom_gray_reg.9.png" target="res/drawable-hdpi/qfpay_bottom_gray_reg.9.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_bottom_reg.9.png" target="res/drawable-hdpi/qfpay_bottom_reg.9.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_bottom_reg_p.9.png" target="res/drawable-hdpi/qfpay_bottom_reg_p.9.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_bottom_y.9.png" target="res/drawable-hdpi/qfpay_bottom_y.9.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_bottom_y_p.9.png" target="res/drawable-hdpi/qfpay_bottom_y_p.9.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_keyboard_delete.png" target="res/drawable-hdpi/qfpay_keyboard_delete.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_keyboard_done.png" target="res/drawable-hdpi/qfpay_keyboard_done.png"/>
+        <resource-file src="resources/drawable-hdpi/qfpay_sign_tip.png" target="res/drawable-hdpi/qfpay_sign_tip.png"/>
+
+        <resource-file src="resources/drawable-xhdpi/qfpay_back_icon.png" target="res/drawable-xhdpi/qfpay_back_icon.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_background_p.9.png" target="res/drawable-xhdpi/qfpay_background_p.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_blue_background.9.png" target="res/drawable-xhdpi/qfpay_blue_background.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_bt_connect.png" target="res/drawable-xhdpi/qfpay_bt_connect.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_btn_backspace.png" target="res/drawable-xhdpi/qfpay_btn_backspace.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_btn_member_add.png" target="res/drawable-xhdpi/qfpay_btn_member_add.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_btn_refresh_w.png" target="res/drawable-xhdpi/qfpay_btn_refresh_w.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_btn_title_help.png" target="res/drawable-xhdpi/qfpay_btn_title_help.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_btn_title_help_s.png" target="res/drawable-xhdpi/qfpay_btn_title_help_s.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_fail.png" target="res/drawable-xhdpi/qfpay_fail.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_ic_card_only.png" target="res/drawable-xhdpi/qfpay_ic_card_only.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_input_box_p_reg.9.png" target="res/drawable-xhdpi/qfpay_input_box_p_reg.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_input_box_reg.9.png" target="res/drawable-xhdpi/qfpay_input_box_reg.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_item_pic_bg.9.png" target="res/drawable-xhdpi/qfpay_item_pic_bg.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_light_emitting.9.png" target="res/drawable-xhdpi/qfpay_light_emitting.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_list_bg_p.9.png" target="res/drawable-xhdpi/qfpay_list_bg_p.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_price_bg.png" target="res/drawable-xhdpi/qfpay_price_bg.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_qr_frame.9.png" target="res/drawable-xhdpi/qfpay_qr_frame.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_sample_upload.jpg" target="res/drawable-xhdpi/qfpay_sample_upload.jpg"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_search_device.9.png" target="res/drawable-xhdpi/qfpay_search_device.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_spline.9.png" target="res/drawable-xhdpi/qfpay_spline.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_success.png" target="res/drawable-xhdpi/qfpay_success.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_swip_card_only.png" target="res/drawable-xhdpi/qfpay_swip_card_only.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_swip_cardv2.png" target="res/drawable-xhdpi/qfpay_swip_cardv2.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_tick.png" target="res/drawable-xhdpi/qfpay_tick.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_trade_process_picture.png" target="res/drawable-xhdpi/qfpay_trade_process_picture.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_unknow.png" target="res/drawable-xhdpi/qfpay_unknow.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_white_background.9.png" target="res/drawable-xhdpi/qfpay_white_background.9.png"/>
+        <resource-file src="resources/drawable-xhdpi/qfpay_white_bg.9.png" target="res/drawable-xhdpi/qfpay_white_bg.9.png"/>
+
+        <resource-file src="resources/layout/qfpay__trade_cloud_activity.xml" target="res/layout/qfpay__trade_cloud_activity.xml"/>
+        <resource-file src="resources/layout/qfpay_choose_device_dialog.xml" target="res/layout/qfpay_choose_device_dialog.xml"/>
+        <resource-file src="resources/layout/qfpay_custom_keyboardview.xml" target="res/layout/qfpay_custom_keyboardview.xml"/>
+        <resource-file src="resources/layout/qfpay_custom_view_password.xml" target="res/layout/qfpay_custom_view_password.xml"/>
+        <resource-file src="resources/layout/qfpay_failed_result_activity.xml" target="res/layout/qfpay_failed_result_activity.xml"/>
+        <resource-file src="resources/layout/qfpay_item_choose_device.xml" target="res/layout/qfpay_item_choose_device.xml"/>
+        <resource-file src="resources/layout/qfpay_mac_error_update_activity.xml" target="res/layout/qfpay_mac_error_update_activity.xml"/>
+        <resource-file src="resources/layout/qfpay_main_certificate_preview.xml" target="res/layout/qfpay_main_certificate_preview.xml"/>
+        <resource-file src="resources/layout/qfpay_main_certificate_upload.xml" target="res/layout/qfpay_main_certificate_upload.xml"/>
+        <resource-file src="resources/layout/qfpay_search_trade_dialog.xml" target="res/layout/qfpay_search_trade_dialog.xml"/>
+        <resource-file src="resources/layout/qfpay_success_result.xml" target="res/layout/qfpay_success_result.xml"/>
+        <resource-file src="resources/layout/qfpay_success_result2.xml" target="res/layout/qfpay_success_result2.xml"/>
+        <resource-file src="resources/layout/qfpay_unknow_result.xml" target="res/layout/qfpay_unknow_result.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_confirm_sign.xml" target="res/layout/qfpay_v2_confirm_sign.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_paint.xml" target="res/layout/qfpay_v2_paint.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_reader_activity.xml" target="res/layout/qfpay_v2_reader_activity.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_receipt_activity.xml" target="res/layout/qfpay_v2_receipt_activity.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_title2.xml" target="res/layout/qfpay_v2_title2.xml"/>
+        <resource-file src="resources/layout/qfpay_v2_trade_process.xml" target="res/layout/qfpay_v2_trade_process.xml"/>
+
+        <resource-file src="resources/values/qfpay_arrays.xml" target="res/values/qfpay_arrays.xml"/>
+        <resource-file src="resources/values/qfpay_attrs.xml" target="res/values/qfpay_attrs.xml"/>
+        <resource-file src="resources/values/qfpay_color.xml" target="res/values/qfpay_color.xml"/>
+        <resource-file src="resources/values/qfpay_custom_password_color.xml" target="res/values/qfpay_custom_password_color.xml"/>
+        <resource-file src="resources/values/qfpay_dimens.xml" target="res/values/qfpay_dimens.xml"/>
+        <resource-file src="resources/values/qfpay_strings.xml" target="res/values/qfpay_strings.xml"/>
+        <resource-file src="resources/values/qfpay_styles.xml" target="res/values/qfpay_styles.xml"/>
+
+        <resource-file src="resources/values-v21/qfpay_styles.xml" target="res/values-v21/qfpay_styles.xml"/>
+
+        <resource-file src="resources/xml/qfpay_custom_keyboard.xml" target="res/xml/qfpay_custom_keyboard.xml"/>
+
+        <source-file src="src/android/libs/arm64/liba01jni.so" target-dir="libs/arm64"/>
+        <source-file src="src/android/libs/arm64/libenc-jni.so" target-dir="libs/arm64"/>
+        <source-file src="src/android/libs/arm64/libserial_port.so" target-dir="libs/arm64"/>
+
+        <source-file src="src/android/libs/arm64-v8a/liba01jni.so" target-dir="libs/arm64-v8a"/>
+        <source-file src="src/android/libs/arm64-v8a/libenc-jni.so" target-dir="libs/arm64-v8a"/>
+        <source-file src="src/android/libs/arm64-v8a/libserial_port.so" target-dir="libs/arm64-v8a"/>
+
+        <source-file src="src/android/libs/armeabi/liba01jni.so" target-dir="libs/armeabi"/>
+        <source-file src="src/android/libs/armeabi/libenc-jni.so" target-dir="libs/armeabi"/>
+        <source-file src="src/android/libs/armeabi/libserial_port.so" target-dir="libs/armeabi"/>
+
+        <source-file src="src/android/libs/armeabi-v7a/liba01jni.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/armeabi-v7a/libenc-jni.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/armeabi-v7a/libserial_port.so" target-dir="libs/armeabi-v7a"/>
+
+        <source-file src="src/android/libs/mips/liba01jni.so" target-dir="libs/mips"/>
+        <source-file src="src/android/libs/mips/libenc-jni.so" target-dir="libs/mips"/>
+        <source-file src="src/android/libs/mips/libserial_port.so" target-dir="libs/mips"/>
+
+        <source-file src="src/android/libs/mips64/liba01jni.so" target-dir="libs/mips64"/>
+        <source-file src="src/android/libs/mips64/libenc-jni.so" target-dir="libs/mips64"/>
+        <source-file src="src/android/libs/mips64/libserial_port.so" target-dir="libs/mips64"/>
+
         <source-file src="src/android/libs/dspread_android_sdk_2.3.9.jar" target-dir="libs"/>
         <source-file src="src/android/libs/possdk_v0.3.jar" target-dir="libs"/>
         <source-file src="src/android/libs/volley-14_10_10.jar" target-dir="libs"/>
