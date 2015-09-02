@@ -26,21 +26,21 @@
     
 2. 参数示例
 
-	```json
+	```javascript
 	// orderInfo
 	{
-        // 支付订单创建者id，对应下单接口返回的create_userid字段（必填）
-        createUserId: {String} '987654321', 
-        // 支付订单id，对应下单接口返回的order_id字段（必填）
-        payOrderId: {String} '123456789',
-        // 用户订单token，对应下单接口返回的qf_token字段（必填）
-        qfToken: {String} 'qf_token',
-        // 钱台交易云用户登录返回的token字段（必填）
-        token: {String} 'vnsdfioduoiausdiuaosd',
-        // 网页端调用时填“1”，App调用时填"2"（必填）
-        platform: {String} '2',
-        // 支付完成用于接收短信收据的手机号（选填）
-        mobile: {String} '18512345678'
+        // {String} 支付订单创建者id，对应下单接口返回的create_userid字段（必填）
+        createUserId: '987654321', 
+        // {String} 支付订单id，对应下单接口返回的order_id字段（必填）
+        payOrderId: '123456789',
+        // {String} 用户订单token，对应下单接口返回的qf_token字段（必填）
+        qfToken: 'qf_token',
+        // {String} 钱台交易云用户登录返回的token字段（必填）
+        token: 'vnsdfioduoiausdiuaosd',
+        // {String} 网页端调用时填“1”，App调用时填"2"（必填）
+        platform: '2',
+        // {String} 支付完成用于接收短信收据的手机号（选填）
+        mobile: '18512345678'
 	}
 	```
 	
