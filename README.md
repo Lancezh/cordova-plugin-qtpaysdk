@@ -2,6 +2,16 @@
 
 > Cordova plugin for [QTPaySDK](https://github.com/QTPay/QTPaySDK-Android)
 
+## Installation
+
+```bash
+$ cordova plugin add cordova-plugin-qtpaysdk
+```
+or
+```bash
+$ cordova plugin add https://github.com/Lancezh/cordova-plugin-qtpaysdk.git
+```
+
 ## POSSDK
 
 > 钱方线下QPOS刷卡使用
