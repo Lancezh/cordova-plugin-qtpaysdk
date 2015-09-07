@@ -48,25 +48,21 @@ public class QTPaySDK extends CordovaPlugin {
         @Override
         public void onPayResultFail() {
             callbackContext.error("fail");
-//            queryOrder();
         }
 
         @Override
         public void onPayResultSuccess() {
-            callbackContext.success("success");
-//            queryOrder();
+            callbackContext.success();
         }
 
         @Override
         public void onPayResultCancel() {
             callbackContext.error("cancel");
-//            queryOrder();
         }
 
         @Override
         public void onPayResultUnknow() {
-            callbackContext.error("unknow");
-//            queryOrder();
+            callbackContext.error("unknown");
         }
     };
 

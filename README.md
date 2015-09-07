@@ -1,5 +1,3 @@
-> ### Development, Please DO NOT USE
-
 # cordova-plugin-qtpaysdk
 
 > Cordova plugin for [QTPaySDK](https://github.com/QTPay/QTPaySDK-Android)
@@ -45,13 +43,18 @@
 	```
 	
 	```javascript
-	function success (response) {
+	function success () {
+	    console.log('支付成功');
         // your success code here
-        console.log(response)
 	}
 	
-	function error (err) {
+	/**
+     * callback function on error
+     * 
+     * @param {String} err_type: 'fail' or 'cancel' or 'unknown'
+     */
+	function error (err_type) {
+	    console.log('err_type = ' + type);
         // your error code here
-        console.log(err)
 	}
 	```
