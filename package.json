@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-qtpaysdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "QTPaySDK Cordova Plugin",
   "cordova": {
     "id": "cordova-plugin-qtpaysdk",
