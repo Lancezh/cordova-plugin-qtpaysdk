@@ -261,7 +261,7 @@
         <source-file src="src/android/libs/mips64/libserial_port.so" target-dir="libs/mips64"/>
 
         <source-file src="src/android/libs/dspread_android_sdk_2.3.9.jar" target-dir="libs"/>
-        <source-file src="src/android/libs/possdk_v0.3.1.jar" target-dir="libs"/>
+        <source-file src="src/android/libs/possdk_v0.3.2.jar" target-dir="libs"/>
         <source-file src="src/android/libs/volley-14_10_10.jar" target-dir="libs"/>
 
         <!-- Plugin src-->
